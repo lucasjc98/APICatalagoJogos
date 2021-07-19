@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APICatalagoJogos</name>
+    </assembly>
+    <members>
+        <member name="M:APICatalagoJogos.Controllers.V1.JogosController.Obter(System.Int32,System.Int32)">
+            <summary>
+            Buscar todos os jogos de forma paginada
+            </summary>
+            <remarks>
+            Não é possível retornar os jogos sem paginação
+            </remarks>
+            <param name="pagina">Indica qual página está sendo consultada. Mínimo 1</param>
+            <param name="quantidade">Indica a quantidade de registros por página. Mínimo 1 e máximo 50</param>
+            <response code="200">Retorna a lista de jogos</response>
+            <response code="204">Caso não haja jogos</response>
+        </member>
+        <member name="M:APICatalagoJogos.Controllers.V1.JogosController.Obter(System.Guid)">
+            <summary>
+            Buscar um jogo pelo seu Id
+            </summary>
+            <param name="idJogo">ID do jogo que você procura</param>
+            <response code="200">Retorna o jogo filtrado</response>
+            <response code="204">Caso não haja jogo com esse id</response>
+        </member>
+        <member name="M:APICatalagoJogos.Controllers.V1.JogosController.InserirJogo(APICatalagoJogos.InputModel.JogoInputModel)">
+            <summary>
+            Insere um jogo
+            </summary>
+            <param name="jogoInputModel"></param>
+            <response code="200">Jogo cadastrado com sucesso</response>
+            <response code="422">Já existe um jogo que você está tentando cadastrar</response>
+        </member>
+        <member name="M:APICatalagoJogos.Controllers.V1.JogosController.AtualizarJogo(System.Guid,APICatalagoJogos.InputModel.JogoInputModel)">
+            <summary>
+            Atualiza um jogo existente
+            </summary>
+            <param name="idJogo">ID do jogo que você procura</param>
+            <param name="jogoInputModel"></param>
+            <response code="200">Jogo atualizado com sucesso</response>
+            <response code="404">Jogo que você quer atualizar não foi encontrado</response>
+            <response code="400">Não preencheu um campo corretamente</response>
+        </member>
+        <member name="M:APICatalagoJogos.Controllers.V1.JogosController.AtualizarJogo(System.Guid,System.Double)">
+            <summary>
+            Atualiza o preço de um jogo existente
+            </summary>
+            <param name="idJogo">ID do jogo que você procura</param>
+            <param name="preco"></param>
+            <response code="200">Preço do jogo atualizado com sucesso</response>
+            <response code="404">Jogo que você quer atualizar não foi encontrado</response>
+        </member>
+        <member name="M:APICatalagoJogos.Controllers.V1.JogosController.ApagarJogo(System.Guid)">
+            <summary>
+            Apagar um jogo existente
+            </summary>
+            <param name="idJogo">ID do jogo que você procura</param>
+            <response code="200">Jogo apagado com sucesso</response>
+            <response code="404">Jogo que você quer apagar não foi encontrado</response>
+        </member>
+    </members>
+</doc>
